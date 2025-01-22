@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Multi-feature image processing tool">
+  <title>Image Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Image Processing Toolkit</h1>
+    <nav>
+      <ul>
+        <li><a href="#compress">Reduce Image</a></li>
+        <li><a href="#pdf">Image to PDF</a></li>
+        <li><a href="#link">Image to Link</a></li>
+        <li><a href="#remove-bg">Remove Background</a></li>
+        <li><a href="#convert">Image Format Conversion</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Reduce Image Section -->
+    <section id="compress">
+      <h2>Reduce Image Size</h2>
+      <div class="feature">
+        <input type="file" id="fileInput" accept="image/*">
+        <input type="number" id="resizePercentage" placeholder="Enter percentage (1-99)">
+        <button onclick="compressImage()">Compress</button>
+        <div id="compressedOutput"></div>
+      </div>
+    </section>
+
+    <!-- Image to PDF Section -->
+    <section id="pdf">
+      <h2>Convert Images to PDF</h2>
+      <div class="feature">
+        <input type="file" id="pdfInput" accept="image/*" multiple>
+        <button onclick="convertToPDF()">Convert to PDF</button>
+        <div id="pdfOutput"></div>
+      </div>
+    </section>
+
+    <!-- Image to Link Section -->
+    <section id="link">
+      <h2>Generate Image Link</h2>
+      <div class="feature">
+        <input type="file" id="linkInput" accept="image/*">
+        <button onclick="generateImageLink()">Generate Link</button>
+        <div id="linkOutput"></div>
+      </div>
+    </section>
+
+    <!-- Remove Background Section -->
+    <section id="remove-bg">
+      <h2>Remove Image Background</h2>
+      <div class="feature">
+        <input type="file" id="removeBgInput" accept="image/*">
+        <button onclick="removeBackground()">Remove Background</button>
+        <div id="bgRemovedOutput"></div>
+      </div>
+    </section>
+
+    <!-- Image Format Conversion Section -->
+    <section id="convert">
+      <h2>Convert Image Format</h2>
+      <div class="feature">
+        <input type="file" id="formatInput" accept="image/*">
+        <select id="formatSelect">
+          <option value="jpeg">JPEG</option>
+          <option value="png">PNG</option>
+          <option value="gif">GIF</option>
+          <option value="webp">WEBP</option>
+        </select>
+        <button onclick="convertFormat()">Convert</button>
+        <div id="formatOutput"></div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Image Toolkit. All rights reserved.</p>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

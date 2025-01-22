@@ -31,7 +31,7 @@
     <section id="compress" class="feature-box">
       <h2>Reduce Image Size</h2>
       <input type="file" id="fileInput" accept="image/*">
-      <input type="number" id="resizePercentage" placeholder="Enter percentage (1-99)">
+      <input type="number" id="resizePercentage" placeholder="Enter percentage (1-99)" min="1" max="99">
       <button onclick="compressImage()">Process</button>
       <div id="compressedOutput">
         <button id="downloadCompressed" style="display: none;">Download</button>

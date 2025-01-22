@@ -8,81 +8,87 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>Image Tools</h1>
-    <nav>
-      <ul>
-        <li><a href="#compress">Reduce Image</a></li>
-        <li><a href="#pdf">Image to PDF</a></li>
-        <li><a href="#link">Image to Link</a></li>
-        <li><a href="#remove-bg">Remove Background</a></li>
-        <li><a href="#convert">Image Format Conversion</a></li>
-      </ul>
-    </nav>
+    <div class="header-container">
+      <h1>Image Tools</h1>
+      <button class="nav-toggle" id="navToggle">☰</button>
+      <nav id="navbar" class="collapsed">
+        <ul>
+          <li><a href="#compress">Reduce Image</a></li>
+          <li><a href="#pdf">Image to PDF</a></li>
+          <li><a href="#link">Image to Link</a></li>
+          <li><a href="#remove-bg">Remove Background</a></li>
+          <li><a href="#convert">Image Format Conversion</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  
+
+  <!-- Main Content -->
   <main>
     <!-- Reduce Image Section -->
-    <section id="compress">
+    <section id="compress" class="feature-box">
       <h2>Reduce Image Size</h2>
-      <div class="feature">
-        <input type="file" id="fileInput" accept="image/*">
-        <input type="number" id="resizePercentage" placeholder="Enter percentage (1-99)">
-        <button onclick="compressImage()">Compress</button>
-        <div id="compressedOutput"></div>
+      <input type="file" id="fileInput" accept="image/*">
+      <input type="number" id="resizePercentage" placeholder="Enter percentage (1-99)">
+      <button onclick="compressImage()">Process</button>
+      <div id="compressedOutput">
+        <button id="downloadCompressed" style="display: none;">Download</button>
       </div>
     </section>
 
     <!-- Image to PDF Section -->
-    <section id="pdf">
+    <section id="pdf" class="feature-box">
       <h2>Convert Images to PDF</h2>
-      <div class="feature">
-        <input type="file" id="pdfInput" accept="image/*" multiple>
-        <button onclick="convertToPDF()">Convert to PDF</button>
-        <div id="pdfOutput"></div>
-      </div>
+      <input type="file" id="pdfInput" accept="image/*" multiple>
+      <button onclick="convertToPDF()">Process</button>
+      <div id="pdfOutput"></div>
     </section>
 
     <!-- Image to Link Section -->
-    <section id="link">
+    <section id="link" class="feature-box">
       <h2>Generate Image Link</h2>
-      <div class="feature">
-        <input type="file" id="linkInput" accept="image/*">
-        <button onclick="generateImageLink()">Generate Link</button>
-        <div id="linkOutput"></div>
-      </div>
+      <input type="file" id="linkInput" accept="image/*">
+      <button onclick="generateImageLink()">Process</button>
+      <div id="linkOutput"></div>
     </section>
 
     <!-- Remove Background Section -->
-    <section id="remove-bg">
+    <section id="remove-bg" class="feature-box">
       <h2>Remove Image Background</h2>
-      <div class="feature">
-        <input type="file" id="removeBgInput" accept="image/*">
-        <button onclick="removeBackground()">Remove Background</button>
-        <div id="bgRemovedOutput"></div>
-      </div>
+      <input type="file" id="removeBgInput" accept="image/*">
+      <button onclick="removeBackground()">Process</button>
+      <div id="bgRemovedOutput"></div>
     </section>
 
     <!-- Image Format Conversion Section -->
-    <section id="convert">
+    <section id="convert" class="feature-box">
       <h2>Convert Image Format</h2>
-      <div class="feature">
-        <input type="file" id="formatInput" accept="image/*">
-        <select id="formatSelect">
-          <option value="jpeg">JPEG</option>
-          <option value="png">PNG</option>
-          <option value="gif">GIF</option>
-          <option value="webp">WEBP</option>
-        </select>
-        <button onclick="convertFormat()">Convert</button>
-        <div id="formatOutput"></div>
-      </div>
+      <input type="file" id="formatInput" accept="image/*">
+      <select id="formatSelect">
+        <option value="jpeg">JPEG</option>
+        <option value="png">PNG</option>
+        <option value="gif">GIF</option>
+        <option value="webp">WEBP</option>
+      </select>
+      <button onclick="convertFormat()">Process</button>
+      <div id="formatOutput"></div>
     </section>
   </main>
-  
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Image Toolkit. All rights reserved.</p>
+    <ul>
+      <li><a href="#compress">Reduce Image</a></li>
+      <li><a href="#pdf">Image to PDF</a></li>
+      <li><a href="#link">Image to Link</a></li>
+      <li><a href="#remove-bg">Remove Background</a></li>
+      <li><a href="#convert">Image Format Conversion</a></li>
+    </ul>
+    <p>©2025 Image Tools</p>
   </footer>
+
   <script src="script.js" defer></script>
 </body>
-</html>
+  </html>
